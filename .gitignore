@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.cache/
+.env
+server/database.json
+test_out.mp4

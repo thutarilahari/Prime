@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Dark mode (default) */
+  body {
+    @apply bg-[#0B0B0F] text-gray-100 min-h-screen overflow-x-hidden;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  /* Light mode — applied when .light is on <html> */
+  .light body {
+    @apply bg-slate-50 text-gray-900;
+  }
+}
+
+/* Custom sleek scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.light ::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.light ::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* Video Range Input styling */
+input[type=range] {
+  accent-color: #10B981;
+}
+
+/* Smooth slide up animation for toasts */
+@keyframes slideUp {
+  from {
+    transform: translateY(120%) scale(0.92);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Smooth transitions */
+.transition-height {
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
